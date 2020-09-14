@@ -34,7 +34,7 @@ function Landing() {
                              color='secondary'
                              style={{color:'#fff', marginTop:'20px', boxShadow:'0 5px 3px rgba(0, 0, 0, 0.6)'}}>
                             <Typography align="center" variant="h4" color='primary' >
-                                projetos
+                               ver projetos
                             </Typography>
                             </Button>
                     </Grid>

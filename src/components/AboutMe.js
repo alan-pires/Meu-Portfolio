@@ -15,8 +15,8 @@ const useStyles = makeStyles({
         height:"350px",
         display:"flex",
         justifyContent:"flex-start",
-        
-    }
+                
+    } 
     
 })
 

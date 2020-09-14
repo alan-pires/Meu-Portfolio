@@ -1,7 +1,9 @@
 import React from 'react'
-import Landing from '../components/Landing'
 import Header from '../components/Header'
+import Landing from '../components/Landing'
 import AboutMe from '../components/AboutMe'
+import Tecnologias from '../components/Tecnologias'
+import Footer from '../components/Footer'
 
 function Home() {
     return (
@@ -9,6 +11,8 @@ function Home() {
             <Header />
             <Landing />
             <AboutMe />
+            <Tecnologias />
+            <Footer />
         </React.Fragment>
     )
 }
