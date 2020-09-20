@@ -34,22 +34,22 @@ function Footer() {
                 </Typography>
                 
                 <IconButton>
-                    <Link variant="body1">
+                    <Link variant="body1" href="https://api.whatsapp.com/send?phone=5511963274855"  target="_blank">
                         WhatsApp
                     </Link>
                 </IconButton>
                 <IconButton>
-                    <Link variant="body1">
+                    <Link variant="body1" href="https://www.linkedin.com/in/alan-pires-de-souza-b016a55a/" target="_blank">
                         Linkedin
                     </Link>
                 </IconButton>
                 <IconButton>
-                    <Link variant="body1">
+                    <Link variant="body1" href="https://github.com/alan-pires" target="_blank">
                         Github
                     </Link>
                 </IconButton>
                 <IconButton>
-                    <Link variant="body1">
+                    <Link variant="body1" href="https://www.instagram.com/desouzaalanpires/" target="_blank">
                         Instagram
                     </Link>
                 </IconButton>

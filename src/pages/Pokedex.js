@@ -1,27 +1,66 @@
-import React from 'react'
-import { Grid } from '@material-ui/core'
-import Header from './Header'
-import Content from './Content'
+import React, { useState, useEffect } from 'react'
+import Header from '../components/Header'
+import PokeCard from '../components/PokeCard'
+import { Grid, Typography, CircularProgress } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
+import Pagination from '../components/Pagination'
+import getPokemons from '../functions/getPokemons'
 
+const useStyles = makeStyles({
+    PokedexContainer:{
+        backgroundColor:"#DDD",
+        paddingTop:"100px"
+    },
+    cardsContainer:{
+        marginBottom:"100px"
+    }
+   
+    
+})
 
 function Pokedex() {
-    return (
+    const classes = useStyles();
+    const [pokemonData, setPokemonData] = useState({});
+        
 
-        <>
-            <Grid container direction="column">
-                <Grid item>
-                    <Header />
-                </Grid>
+    useEffect(() => {
+       getPokemons(100, 0, 1, setPokemonData)
+    }, [])
 
-                <Grid item container>
-                    <Grid item xs={1} sm={2} />
-                    <Grid item xs={10} sm={8} >
-                        <Content />
-                    </Grid>
-                    <Grid item xs={1} sm={2} />
-                </Grid>
+    const getPokemonCard = (pokemonId) => {
+        const {id, name, sprite} = pokemonData[pokemonId];
+        return (
+            <Grid item xs={12} sm={6} md={3} key={pokemonId} >
+                <PokeCard id={id} nome={name} imagem={sprite} />
             </Grid>
+        )
+    }
+    
 
+    return (
+        <>
+            <Header />
+            <Grid container xs={12} direction="column" alignItems="center" className={classes.PokedexContainer}>
+                <Grid item container xs={10}>
+                    <Typography variant="h5">
+                        Pokémon List:
+                    </Typography>
+                </Grid>
+                {pokemonData ? (
+                    <>
+                    <Grid item container xs={10} spacing={2} className={classes.cardsContainer}>
+                    <Pagination setPokemon={setPokemonData}  />
+                        {Object.keys(pokemonData).map(
+                            pokemonId => getPokemonCard(pokemonId)
+                        )}
+                        
+                    </Grid>
+                   
+                </>
+                ) : (
+                        <CircularProgress />
+                    )}
+            </Grid>
         </>
     )
 }

@@ -4,8 +4,7 @@ import SobreMimImagem from '../images/eu2.jpg'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
-    root:{
-       
+    root:{       
         backgroundColor:"#222",
         display:"flex",
         justifyContent:"center",

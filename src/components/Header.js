@@ -1,7 +1,8 @@
 import React from 'react'
-import { Toolbar, Link, Typography, IconButton} from '@material-ui/core';
+import { Toolbar, Typography, IconButton} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 import GitHubIcon from '@material-ui/icons/GitHub';
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles({
     root: {
@@ -19,15 +20,15 @@ function Header() {
     const classes = useStyles();
     return (
         <Toolbar className={classes.root}  >
-            <IconButton color="primary">
+            <IconButton color="primary" component={Link} to="/">
+               <Typography variant="h6"> 
+                    Home
+                </Typography>
+            </IconButton>
+            <IconButton color="primary" component={Link} to="/projects">
                <Typography variant="h6"> 
                     Projetos
                 </Typography>
-            </IconButton>
-            <IconButton color="primary">
-                <Typography variant="h6"> 
-                    Currículo
-                </Typography >
             </IconButton>
             <IconButton color="primary" >
                 <Typography variant="h6">  

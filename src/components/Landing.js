@@ -1,8 +1,16 @@
 import React from 'react';
 import Fundo from '../images/code1.jpg'
 import {Typography, Grid, Button} from '@material-ui/core'
+import {Link} from 'react-router-dom'
 
 function Landing() {
+
+    function goToProjets(e){
+        e.preventDefult();
+
+        window.location()
+    }
+
     return (
         <section>
             <Grid container xs={12} style={{
@@ -30,6 +38,8 @@ function Landing() {
                                 Bem Vindo!
                             </Typography>
                             <Button
+                             component={Link}
+                             to="/projects"
                              variant='contained'
                              color='secondary'
                              style={{color:'#fff', marginTop:'20px', boxShadow:'0 5px 3px rgba(0, 0, 0, 0.6)'}}>
