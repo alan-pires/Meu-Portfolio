@@ -2,7 +2,7 @@ import React from 'react'
 import {Card, CardMedia, CardContent, Typography} from '@material-ui/core'
 import {makeStyles} from '@material-ui/core/styles'
 import {Link } from 'react-router-dom'
-import { Translate } from '@material-ui/icons'
+
 const useStyles = makeStyles({
     cardContainer:{
         '&:hover':{
@@ -19,7 +19,7 @@ const useStyles = makeStyles({
         textDecoration:"none",
         color:"#000"
     },
-    "@keyframes bounce": {
+    "@keyframes bounce": { 
         "20%":{
             transform: "translateY(-10px)"
         },

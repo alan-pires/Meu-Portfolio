@@ -13,8 +13,7 @@ const useStyles = makeStyles({
     },
     cardsContainer:{
         marginBottom:"100px"
-    }
-   
+    }   
     
 })
 
