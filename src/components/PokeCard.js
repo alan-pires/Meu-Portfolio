@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {Card, CardMedia, CardContent, Typography} from '@material-ui/core'
 import {makeStyles} from '@material-ui/core/styles'
 import {Link } from 'react-router-dom'
@@ -7,7 +7,8 @@ const useStyles = makeStyles({
     cardContainer:{
         '&:hover':{
                 animation:"$bounce 0.5s linear"
-            }        
+            },
+            backgroundColor:"#F5F5F5"
     },
     cardMedia:{
         margin:"auto" 
@@ -39,7 +40,7 @@ const firstLetterUpper = name => name.charAt(0).toUpperCase() + name.slice(1);
 
 function PokeCard({id, nome, imagem}) {
     const classes = useStyles()
-   
+
     return (
        <Card
        key={id}

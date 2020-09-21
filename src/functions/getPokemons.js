@@ -12,7 +12,7 @@ export default  function getPokemons (limit, offset, indexPoke, callback) {
             newPokemonData[index + indexPoke] = {
                 id: index + indexPoke,
                 name: pokemon.name,
-                sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + indexPoke}.png`
+                sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + indexPoke}.png`,
             }
         })
         callback(newPokemonData)

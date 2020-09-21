@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Typography, IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 import Header from '../components/Header'
+import {Link} from 'react-router-dom';
+
 
 const useStyles = makeStyles({
     pokemonContainer: {
@@ -11,6 +13,9 @@ const useStyles = makeStyles({
     },
     conteudo: {
         margin: "20px auto",
+    },
+    botaoVoltar:{
+        alignSelf:"flex-start"
     }
 })
 
@@ -29,10 +34,8 @@ function Pokemon(props) {
         axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
             .then((response) => {
                 const { data } = response
-                console.log(data)
                 setPokeData(data)
             })
-        // .catch((error)=> console.log("Erro: "+ error))
     }, [])
 
     return (
@@ -94,7 +97,11 @@ function Pokemon(props) {
                             return <Typography key={name}>{`${name}: ${base_stat}`} </Typography>
                         })}
                         </Typography>
-
+                        <IconButton component={Link} to="/pokedex" className={classes.botaoVoltar}>
+                            <Typography color="secondary" variant="h5">
+                                Voltar
+                            </Typography>
+                        </IconButton>
 
                     </Grid>
                 </>
