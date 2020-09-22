@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Grid, Typography, TextField } from '@material-ui/core'
+import { Grid, Typography, TextField, CircularProgress } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import Header from '../components/Header'
 import Axios from 'axios'
@@ -31,6 +31,9 @@ const useStyles = makeStyles({
     },
     outrosDados:{
         paddingRight:"20px"
+    },
+    progress:{
+        alignSelf:"center"
     }
 
 })
@@ -41,7 +44,7 @@ function Weather() {
         latitude: 0,
         longitude: 0
     })
-    const [data, setData] = useState({})
+    const [data, setData] = useState(undefined)
     const [local, setLocal] = useState("")
 
     useEffect(() => {
@@ -128,7 +131,8 @@ function Weather() {
                     </TextField>
                 </Grid>
 
-                <Grid item container className={classes.informacoes} xs={12} direction="column">
+                {data ? (
+                    <Grid item container className={classes.informacoes} xs={12} direction="column">
                     <Grid item container xs={12} direction="row" className={classes.containerTemperatura}>
                         <Grid item >
                             <Typography variant="h5">
@@ -168,6 +172,11 @@ function Weather() {
 
 
                 </Grid>
+
+                ): (
+                    <CircularProgress className={classes.progress} color="secondary"/>
+                )}
+                
             </Grid>
         </>
     )
