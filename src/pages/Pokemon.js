@@ -45,10 +45,10 @@ function Pokemon(props) {
             <Grid item container xs={12} alignItems="center" direction="column">
                 <img src={imagem} style={{ width: "300px", height: "300px" }} />
                 <Typography variant="h4">
-                    {pokeData != undefined ? `#${id} - ${firstLetterUpper(pokeData.name)} `  : null}
+                    {pokeData !== undefined ? `#${id} - ${firstLetterUpper(pokeData.name)} `  : null}
                 </Typography>
             </Grid>
-            {pokeData != undefined ? (
+            {pokeData !== undefined ? (
                 <>
                     <Grid container xs={12} sm={2}> 
                     </Grid>

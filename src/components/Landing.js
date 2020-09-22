@@ -5,11 +5,11 @@ import {Link} from 'react-router-dom'
 
 function Landing() {
 
-    function goToProjets(e){
-        e.preventDefult();
+    // function goToProjets(e){
+    //     e.preventDefult();
 
-        window.location()
-    }
+    //     window.location()
+    // }
 
     return (
         <section>

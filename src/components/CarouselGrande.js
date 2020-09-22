@@ -8,8 +8,8 @@ import Pokedex from '../images/pokedex.png'
 function CarouselC() {
     
     const items = [
-        { id: 1, imagem: SiteEsteban, linkSite:"https://psicologoestebanchala.netlify.app/" },
-        { id: 2, imagem: Pokedex, linkSite:"/pokedex"}
+        { id: 1, imagem: SiteEsteban, linkSite:"https://psicologoestebanchala.netlify.app/", altImg: "Site Psicologia" },
+        { id: 2, imagem: Pokedex, linkSite:"/pokedex", altImg: "Pokedex"}
     ]
 
     return (
@@ -17,7 +17,7 @@ function CarouselC() {
              itemsToShow={1}
              itemsToScroll={1}
              >
-                {items.map(item =><Link href={item.linkSite} target="_blank"> <img src={item.imagem} /></Link>)}
+                {items.map(item =><Link href={item.linkSite} target="_blank"> <img src={item.imagem} alt={item.altImg}/></Link>)}
             </Carousel> 
     )
 }

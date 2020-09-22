@@ -73,7 +73,7 @@ function Pokedex() {
                         />
                     </div>
                 </Grid>
-                {pokemonData != undefined ? (
+                {pokemonData !== undefined ? (
                     <>
                         <Grid item container xs={10} spacing={2} className={classes.cardsContainer}>
                             <Pagination setPokemon={setPokemonData} />

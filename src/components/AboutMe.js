@@ -25,7 +25,7 @@ function AboutMe() {
     return (
         <Grid container className={classes.root} >
             <Grid item xs={12} md={5} className={classes.root}>
-                <img src={SobreMimImagem} style={{borderRadius:"50%", width:"300px", height:"300px", padding:"20px 0"}}/>
+                <img src={SobreMimImagem} style={{borderRadius:"50%", width:"300px", height:"300px", padding:"20px 0"}} alt="Sobre mim"/>
             </Grid>
             <Grid item xs={12} md={7} className={classes.sobreMim}>
                 <Typography color="primary">
